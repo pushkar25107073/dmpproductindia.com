@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | DMP Products India</title>
+
+    <!-- Linking CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* Main page design */
+        .about-page {
+            color: #153758;
+            background: #f5f8fc;
+            min-height: 100vh;
+        }
+
+        /* Top banner */
+        .about-hero {
+            background: linear-gradient(135deg, #102d4a, #1b5275);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        /* Small heading */
+        .about-tag {
+            display: inline-block;
+            color: #7ee0d5;
+            border: 1px solid rgba(126, 224, 213, 0.5);
+            padding: 8px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        /* Main heading */
+        .about-hero h1 {
+            color: white;
+            font-size: clamp(32px, 5vw, 48px);
+            margin: 0 0 18px;
+        }
+
+        /* Banner paragraph */
+        .about-hero p {
+            color: #e1ebf5;
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        /* Main content area */
+        .about-main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 65px 22px;
+        }
+
+        /* Introduction section */
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 35px;
+            align-items: stretch;
+            margin-bottom: 65px;
+        }
+
+        /* White information box */
+        .about-panel {
+            background: white;
+            border: 1px solid #e3eaf2;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(21, 55, 88, 0.06);
+        }
+
+        .about-panel h2,
+        .about-section-title {
+            color: #153758;
+            font-size: 27px;
+            margin: 0 0 18px;
+        }
+
+        .about-panel p {
+            color: #64748b;
+            line-height: 1.9;
+            margin: 0 0 14px;
+        }
+
+        /* Highlight box */
+        .about-highlight {
+            background: linear-gradient(145deg, #e2f6f4, #f0f8ff);
+            border-radius: 18px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-highlight .about-number {
+            color: #148b8e;
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .about-highlight h3 {
+            color: #153758;
+            font-size: 23px;
+            margin: 0 0 12px;
+        }
+
+        .about-highlight p {
+            color: #526579;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* What We Offer heading */
+        .about-section-heading {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .about-section-heading span {
+            color: #148b8e;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .about-section-heading h2 {
+            color: #153758;
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        .about-section-heading p {
+            color: #64748b;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* Product and service cards */
+        .about-offer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-bottom: 65px;
+        }
+
+        /* Individual cards */
+        .about-offer-card {
+            background: white;
+            border: 1px solid #e3eaf2;
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect on cards */
+        .about-offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(21, 55, 88, 0.1);
+        }
+
+        /* Icons inside cards */
+        .about-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e3f6f4;
+            color: #148b8e;
+            border-radius: 13px;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .about-offer-card h3 {
+            color: #153758;
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        .about-offer-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Our Goal section */
+        .about-goal {
+            background: #153758;
+            border-radius: 20px;
+            padding: 42px 30px;
+            text-align: center;
+            color: white;
+            margin-bottom: 45px;
+        }
+
+        .about-goal h2 {
+            color: white;
+            font-size: 29px;
+            margin: 0 0 15px;
+        }
+
+        .about-goal p {
+            color: #e0eaf4;
+            line-height: 1.9;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        /* Contact section */
+        .about-cta {
+            text-align: center;
+            padding: 25px 15px 15px;
+        }
+
+        .about-cta h2 {
+            color: #153758;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .about-cta p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Contact button */
+        .about-cta a {
+            display: inline-block;
+            background: #148b8e;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 9px;
+            font-weight: 700;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Button hover effect */
+        .about-cta a:hover {
+            background: #106f72;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .about-page-footer {
+            background: #102d4a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 30px;
+        }
+
+        .about-page-footer h3 {
+            color: white;
+            margin: 0 0 10px;
+        }
+
+        .about-page-footer p {
+            color: #d5e2ef;
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 700px) {
+
+            .about-hero {
+                padding: 55px 18px;
+            }
+
+            .about-main {
+                padding: 40px 15px;
+            }
+
+            .about-intro,
+            .about-offer-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .about-panel,
+            .about-highlight,
+            .about-offer-card {
+                padding: 23px;
+            }
+
+            .about-section-heading h2 {
+                font-size: 27px;
+            }
+
+            .about-goal {
+                padding: 32px 22px;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="about-page">
+
+    <!-- Navigation bar -->
+    <nav>
+        <a href="dmp.html">HOME</a>
+        <a href="about.html">About Us</a>
+        <a href="production.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- About Us banner -->
+    <header class="about-hero">
+
+        <span class="about-tag">GET TO KNOW US</span>
+
+        <h1>About DMP Products India</h1>
+
+        <p>
+            Your wholesale business partner for children's tricycles
+            and balancing cycles. We work with dealers, retailers and
+            wholesale buyers to understand their product requirements.
+        </p>
+
+    </header>
+
+    <!-- Main content -->
+    <main class="about-main">
+
+        <!-- Who We Are section -->
+        <section class="about-intro">
+
+            <div class="about-panel">
+
+                <h2>Who We Are</h2>
+
+                <p>
+                    Welcome to DMP Products India, a manufacturer and
+                    wholesale supplier of children's tricycles.
+                </p>
+
+                <p>
+                    We focus on supplying children's tricycles and
+                    balancing cycles to dealers, retailers and wholesale
+                    buyers. Our aim is to make wholesale enquiries and
+                    product selection straightforward for our business
+                    customers.
+                </p>
+
+            </div>
+
+            <div class="about-highlight">
+
+                <div class="about-number">DMP</div>
+
+                <h3>Built Around Your Business Needs</h3>
+
+                <p>
+                    We aim to build long-term business relationships
+                    through clear communication and an understanding
+                    of our customers' wholesale requirements.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Our Offerings section -->
+        <section>
+
+            <div class="about-section-heading">
+
+                <span>OUR OFFERINGS</span>
+
+                <h2>What We Offer</h2>
+
+                <p>
+                    Explore our product range and wholesale support
+                    for your business.
+                </p>
+
+            </div>
+
+            <div class="about-offer-grid">
+
+                <article class="about-offer-card">
+
+                    <div class="about-icon">🚲</div>
+
+                    <h3>Kids Tricycles</h3>
+
+                    <p>
+                        Children's tricycles for dealers and retailers
+                        looking to explore wholesale product options.
+                    </p>
+
+                </article>
+
+                <article class="about-offer-card">
+
+                    <div class="about-icon">🛴</div>
+
+                    <h3>Balancing Cycles</h3>
+
+                    <p>
+                        Explore our balancing cycle range for your
+                        children's products business.
+                    </p>
+
+                </article>
+
+                <article class="about-offer-card">
+
+                    <div class="about-icon">📦</div>
+
+                    <h3>Wholesale Supply</h3>
+
+                    <p>
+                        Wholesale product enquiries for dealers,
+                        retailers and bulk buyers.
+                    </p>
+
+                </article>
+
+                <article class="about-offer-card">
+
+                    <div class="about-icon">🤝</div>
+
+                    <h3>Enquiry Support</h3>
+
+                    <p>
+                        Contact us to discuss product details,
+                        availability and your wholesale requirements.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Our Goal section -->
+        <section class="about-goal">
+
+            <h2>Our Goal</h2>
+
+            <p>
+                Our goal is to build lasting relationships with dealers
+                and retailers, understand their business needs and
+                provide a straightforward way to enquire about our
+                products.
+            </p>
+
+        </section>
+
+        <!-- Contact section -->
+        <section class="about-cta">
+
+            <h2>Interested in Our Products?</h2>
+
+            <p>
+                Get in touch with us to discuss your wholesale
+                requirements and product enquiries.
+            </p>
+
+            <a href="contact.html">Contact Us &rarr;</a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="about-page-footer">
+
+        <h3>DMP Products India</h3>
+
+        <p>Tricycle Manufacturer &amp; Wholesale Supplier</p>
+
+        <p>&copy; 2026 DMP Products India. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>

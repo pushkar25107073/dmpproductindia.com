@@ -1,0 +1,346 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | DMP Products India</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* GALLERY PAGE ONLY */
+
+        .gallery-page {
+            background: #f5f8fc;
+            color: #153758;
+            min-height: 100vh;
+        }
+
+        .gallery-hero {
+            background: linear-gradient(135deg, #102d4a, #1b5275);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            color: #7ee0d5;
+            border: 1px solid rgba(126, 224, 213, 0.5);
+            padding: 8px 17px;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .gallery-hero h1 {
+            color: white;
+            font-size: clamp(32px, 5vw, 46px);
+            margin: 0 0 15px;
+        }
+
+        .gallery-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #e1ebf5;
+            line-height: 1.9;
+        }
+
+        .gallery-main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 22px;
+        }
+
+        .gallery-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .gallery-heading span {
+            color: #148b8e;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .gallery-heading h2 {
+            color: #153758;
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        .gallery-heading p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            margin-bottom: 55px;
+        }
+
+        .gallery-card {
+            background: white;
+            border: 1px solid #e3eaf2;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(21, 55, 88, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 38px rgba(21, 55, 88, 0.13);
+        }
+
+        .gallery-image-box {
+            height: 260px;
+            overflow: hidden;
+            background: #edf2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-card:hover .gallery-image-box img {
+            transform: scale(1.05);
+        }
+
+        .gallery-card-content {
+            padding: 22px;
+        }
+
+        .gallery-category {
+            display: inline-block;
+            background: #e3f6f4;
+            color: #117779;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .gallery-card-content h3 {
+            color: #153758;
+            font-size: 21px;
+            margin: 0 0 10px;
+        }
+
+        .gallery-card-content p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .gallery-cta {
+            background: #153758;
+            color: white;
+            text-align: center;
+            padding: 42px 25px;
+            border-radius: 20px;
+        }
+
+        .gallery-cta h2 {
+            color: white;
+            font-size: 29px;
+            margin: 0 0 12px;
+        }
+
+        .gallery-cta p {
+            color: #e0eaf4;
+            max-width: 650px;
+            margin: 0 auto 22px;
+            line-height: 1.8;
+        }
+
+        .gallery-cta a {
+            display: inline-block;
+            background: white;
+            color: #153758;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s ease;
+        }
+
+        .gallery-cta a:hover {
+            background: #e3f6f4;
+        }
+
+        .gallery-page-footer {
+            background: #102d4a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .gallery-page-footer h3 {
+            color: white;
+            margin: 0 0 10px;
+        }
+
+        .gallery-page-footer p {
+            color: #d5e2ef;
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-hero {
+                padding: 48px 18px;
+            }
+
+            .gallery-main {
+                padding: 38px 15px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .gallery-image-box {
+                height: 250px;
+            }
+
+            .gallery-heading h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+
+    <nav>
+        <a href="dmp.html">HOME</a>
+        <a href="about.html">About Us</a>
+        <a href="production.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <header class="gallery-hero">
+        <span class="gallery-tag">OUR COLLECTION</span>
+        <h1>Our Product Gallery</h1>
+        <p>
+            Take a closer look at our children's tricycles and
+            balancing cycles at DMP Products India.
+        </p>
+    </header>
+
+    <main class="gallery-main">
+
+        <section class="gallery-heading">
+            <span>EXPLORE OUR RANGE</span>
+            <h2>Products at a Glance</h2>
+            <p>
+                Browse our product photos and contact us for
+                wholesale information.
+            </p>
+        </section>
+
+        <section class="gallery-grid">
+
+            <article class="gallery-card">
+                <div class="gallery-image-box">
+                    <img
+                        src="c:\Users\pushk\OneDrive\Pictures\Screenshots\Screenshot 2026-09-26 235000.png"
+                        alt="Kids Tricycle"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="gallery-card-content">
+                    <span class="gallery-category">TRICYCLE</span>
+                    <h3>Kids Tricycle</h3>
+                    <p>
+                        Explore our children's tricycle range
+                        for your retail or wholesale business.
+                    </p>
+                </div>
+            </article>
+
+            <article class="gallery-card">
+                <div class="gallery-image-box">
+                    <img
+                        src="c:\Users\pushk\OneDrive\Pictures\Screenshots\Screenshot 2026-09-26 234416.png"
+                        alt="Balancing Cycle"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="gallery-card-content">
+                    <span class="gallery-category">BALANCING CYCLE</span>
+                    <h3>Balancing Cycle</h3>
+                    <p>
+                        View our balancing cycle range and enquire
+                        about products for your business.
+                    </p>
+                </div>
+            </article>
+
+            <article class="gallery-card">
+                <div class="gallery-image-box">
+                    <img
+                        src="c:\Users\pushk\OneDrive\Documents\WhatsApp Image 2026-09-26 at 6.11.40 PM.jpeg"
+                        alt="DMP Products India tricycle collection"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="gallery-card-content">
+                    <span class="gallery-category">OUR COLLECTION</span>
+                    <h3>Tricycle Collection</h3>
+                    <p>
+                        Discover more of our collection of
+                        children's tricycles.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="gallery-cta">
+            <h2>Interested in Our Products?</h2>
+            <p>
+                Dealers, retailers and wholesale buyers can contact
+                us for product details and wholesale enquiries.
+            </p>
+            <a href="contact.html">Contact Us &rarr;</a>
+        </section>
+
+    </main>
+
+    <footer class="gallery-page-footer">
+        <h3>DMP Products India</h3>
+        <p>Tricycle Manufacturer &amp; Wholesale Supplier</p>
+        <p>&copy; 2026 DMP Products India. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```

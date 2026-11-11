@@ -1,0 +1,357 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Products | DMP Products India</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* PRODUCTS PAGE ONLY */
+
+        .products-page {
+            background: #f5f8fc;
+            color: #153758;
+            min-height: 100vh;
+        }
+
+        .products-hero {
+            background: linear-gradient(135deg, #102d4a, #1b5275);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .products-tag {
+            display: inline-block;
+            color: #7ee0d5;
+            border: 1px solid rgba(126, 224, 213, 0.5);
+            border-radius: 30px;
+            padding: 8px 17px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .products-hero h1 {
+            color: white;
+            font-size: clamp(32px, 5vw, 46px);
+            margin: 0 0 15px;
+        }
+
+        .products-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #e1ebf5;
+            line-height: 1.9;
+        }
+
+        .products-main {
+            max-width: 1150px;
+            padding: 55px 20px;
+            margin: auto;
+        }
+
+        .products-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .products-heading span {
+            color: #148b8e;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .products-heading h2 {
+            color: #153758;
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        .products-heading p {
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .products-page .product-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            margin: 0 auto 55px;
+            align-items: stretch;
+        }
+
+        .products-page .product-card {
+            background: white;
+            border: 1px solid #e3eaf2;
+            border-radius: 20px;
+            padding: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(21, 55, 88, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .products-page .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 38px rgba(21, 55, 88, 0.13);
+        }
+
+        .product-image-box {
+            background: #f5f8fc;
+            border-radius: 14px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 22px;
+        }
+
+        .products-page .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .products-page .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            display: inline-block;
+            background: #e3f6f4;
+            color: #117779;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .products-page .product-card h2 {
+            color: #153758;
+            font-size: 25px;
+            margin: 0 0 12px;
+        }
+
+        .products-page .product-card p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .product-actions {
+            margin-top: 22px;
+        }
+
+        .products-page .product-card a,
+        .products-contact a {
+            display: inline-block;
+            background: #148b8e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s ease;
+        }
+
+        .products-page .product-card a:hover,
+        .products-contact a:hover {
+            background: #106f72;
+        }
+
+        .products-contact {
+            background: #153758;
+            color: white;
+            text-align: center;
+            padding: 42px 25px;
+            border-radius: 20px;
+        }
+
+        .products-contact h2 {
+            color: white;
+            font-size: 29px;
+            margin: 0 0 12px;
+        }
+
+        .products-contact p {
+            color: #e0eaf4;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto 22px;
+        }
+
+        .products-contact a {
+            background: white;
+            color: #153758;
+        }
+
+        .products-contact a:hover {
+            background: #e3f6f4;
+        }
+
+        .products-page-footer {
+            background: #102d4a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .products-page-footer h3 {
+            color: white;
+            margin: 0 0 10px;
+        }
+
+        .products-page-footer p {
+            color: #d5e2ef;
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 700px) {
+            .products-hero {
+                padding: 48px 18px;
+            }
+
+            .products-main {
+                padding: 38px 15px;
+            }
+
+            .products-page .product-container {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .product-image-box {
+                height: 240px;
+            }
+
+            .products-page .product-card {
+                padding: 20px;
+            }
+
+            .products-heading h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body class="products-page">
+
+    <nav>
+        <a href="dmp.html">HOME</a>
+        <a href="about.html">About Us</a>
+        <a href="production.html">Products</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <header class="products-hero">
+        <span class="products-tag">OUR PRODUCT RANGE</span>
+        <h1>Discover Our Products</h1>
+        <p>
+            Explore our range of children's tricycles and balancing
+            cycles. Contact DMP Products India for product details
+            and wholesale enquiries.
+        </p>
+    </header>
+
+    <main class="products-main">
+
+        <section class="products-heading">
+            <span>MADE FOR LITTLE ADVENTURES</span>
+            <h2>Explore Our Collection</h2>
+            <p>
+                Find the right products for your retail or wholesale
+                business.
+            </p>
+        </section>
+
+        <section class="product-container">
+
+            <article class="product-card">
+
+                <div class="product-image-box">
+                    <img
+                        src="c:\Users\pushk\OneDrive\Pictures\Screenshots\Screenshot 2026-09-26 235000.png"
+                        alt="Kids Tricycle"
+                    >
+                </div>
+
+                <span class="product-category">
+                    CHILDREN'S TRICYCLE
+                </span>
+
+                <h2>Kids Tricycle</h2>
+
+                <p>
+                    Explore our kids tricycles for your children's
+                    product range. Contact us to discuss product
+                    details and wholesale requirements.
+                </p>
+
+                <div class="product-actions">
+                    <a href="contact.html">Enquire Now &rarr;</a>
+                </div>
+
+            </article>
+
+            <article class="product-card">
+
+                <div class="product-image-box">
+                    <img
+                        src="c:\Users\pushk\OneDrive\Pictures\Screenshots\Screenshot 2026-09-26 234416.png"
+                        alt="Balancing Cycle"
+                    >
+                </div>
+
+                <span class="product-category">
+                    CHILDREN'S BALANCING CYCLE
+                </span>
+
+                <h2>Balancing Cycle</h2>
+
+                <p>
+                    Discover our balancing cycles for your store
+                    or wholesale business. Contact us for product
+                    information and availability.
+                </p>
+
+                <div class="product-actions">
+                    <a href="contact.html">Enquire Now &rarr;</a>
+                </div>
+
+            </article>
+
+        </section>
+
+        <section class="products-contact">
+            <h2>Bulk Orders & Wholesale Enquiries</h2>
+            <p>
+                Are you a dealer, retailer or wholesale buyer?
+                Get in touch with us to discuss your product
+                requirements.
+            </p>
+            <a href="contact.html">Contact Our Team &rarr;</a>
+        </section>
+
+    </main>
+
+    <footer class="products-page-footer">
+        <h3>DMP Products India</h3>
+        <p>Tricycle Manufacturer &amp; Wholesale Supplier</p>
+        <p>&copy; 2026 DMP Products India. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
